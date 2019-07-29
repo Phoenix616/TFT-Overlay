@@ -19,7 +19,7 @@ namespace TFT_Overlay
         [System.Runtime.InteropServices.DllImport("user32.dll", EntryPoint = "SetForegroundWindow")]
         public static extern bool SetForegroundWindow(IntPtr hWnd);
         public IntPtr myHandle;
-        private System.Timers.Timer tTop;
+        private System.Timers.Timer tTop; 
 
         private readonly Cursor LoLNormal = CustomCursor.FromByteArray(Properties.Resources.LoLNormal);
         private readonly Cursor LoLPointer = CustomCursor.FromByteArray(Properties.Resources.LoLPointer);
@@ -46,14 +46,14 @@ namespace TFT_Overlay
             this.Cursor = LoLNormal;
 
             this.WindowState = System.Windows.WindowState.Normal;
-            this.ShowInTaskbar = false;
+            this.ShowInTaskbar = true;
             this.Topmost = OnTop;
             myHandle = new System.Windows.Interop.WindowInteropHelper(this).Handle;
             //...
             tTop = new System.Timers.Timer(15000);//set Timer  
             tTop.Elapsed += new System.Timers.ElapsedEventHandler(theout);
             tTop.AutoReset = true;
-            tTop.Enabled = true;
+            tTop.Enabled = true; 
 
             CanDrag = !Settings.Default.Lock;
 
@@ -94,8 +94,8 @@ namespace TFT_Overlay
                     tTop.Stop();
                 }
             }
-        }
-
+        } 
+        
         private void MainWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             Settings.Default.Save();
@@ -108,7 +108,7 @@ namespace TFT_Overlay
 
         private void MenuItem_Click_About(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("TFT Information Overlay V" + CurrentVersion + " by J2GKaze/Jinsoku#4019\nModified by Phoenix616/The_Moep#6681\n\nDM me on Discord if you have any questions\n\nLast July 26th, 2019 @ 1:21 UTC", "About");
+            MessageBox.Show("TFT Information Overlay V" + CurrentVersion + " by J2GKaze/Jinsoku#4019\nModified by Phoenix616/The_Moep#6681\n\nDM me on Discord if you have any questions\n\nLast July 29th, 2019 @ 23:35 UTC", "About");
         }
 
         private void MenuItem_Click_Credits(object sender, RoutedEventArgs e)
