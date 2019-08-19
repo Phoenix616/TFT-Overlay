@@ -96,6 +96,10 @@
     <ApplicationIcon>TFT Overlay.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AngleSharp, Version=0.12.1.0, Culture=neutral, PublicKeyToken=e83494dcdc6d31ea">
+      <HintPath>packages\AngleSharp.0.12.1\lib\net46\AngleSharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Costura, Version=3.3.3.0, Culture=neutral, PublicKeyToken=9919ef960d84173d, processorArchitecture=MSIL">
       <HintPath>packages\Costura.Fody.3.3.3\lib\net40\Costura.dll</HintPath>
     </Reference>
@@ -120,6 +124,14 @@
     <Reference Include="System.IO.Compression" />
     <Reference Include="System.IO.Compression.FileSystem" />
     <Reference Include="System.Numerics" />
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>packages\System.Runtime.CompilerServices.Unsafe.4.5.2\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Text.Encoding.CodePages, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>packages\System.Text.Encoding.CodePages.4.5.0\lib\net461\System.Text.Encoding.CodePages.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>packages\MvvmLightLibs.5.3.0.0\lib\net45\System.Windows.Interactivity.dll</HintPath>
@@ -142,6 +154,13 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="CustomCursor.cs" />
+    <Compile Include="Data\ITftSynergy.cs" />
+    <Compile Include="Data\Providers\DataProvider.cs" />
+    <Compile Include="Data\Providers\LoLChessGgProvider.cs" />
+    <Compile Include="Data\TftChampion.cs" />
+    <Compile Include="Data\TftClass.cs" />
+    <Compile Include="Data\TftItem.cs" />
+    <Compile Include="Data\TftOrigin.cs" />
     <Compile Include="ItemsCounter.cs" />
     <Compile Include="Utilities\ProcessHelper.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
